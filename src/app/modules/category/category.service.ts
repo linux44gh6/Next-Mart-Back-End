@@ -8,13 +8,11 @@ import { Category } from "./category.model";
 import User from "../user/user.model";
 import { UserRole } from "../user/user.interface";
 import { Product } from "../product/product.model";
-
 const createCategory = async (
   categoryData: Partial<ICategory>,
   icon: IImageFile,
   authUser: IJwtPayload
 ) => {
-
   const category = new Category({
     ...categoryData,
     createdBy: authUser.userId,
